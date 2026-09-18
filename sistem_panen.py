@@ -18,14 +18,6 @@ def hitung_total_panen(data_panen):
         total += panen["berat_kg"]
     return total
 
-
-def hitung_harga_dengan_diskon(total_berat_kg, harga_per_kg, persen_diskon=0):
-    harga_awal = total_berat_kg * harga_per_kg
-    potongan = harga_awal * (persen_diskon / 100)
-    harga_akhir = harga_awal - potongan
-    return harga_akhir
-
-
 def main():
     data_panen = [
         {"petak": "A1", "berat_kg": 120},
@@ -46,6 +38,11 @@ def main():
     print(f"Diskon: {persen_diskon}%")
     print(f"Harga setelah diskon: Rp{harga_akhir:,.0f}")
 
-
+def hitung_harga_dengan_diskon(total_berat_kg, harga_per_kg, persen_diskon=0):
+    harga_awal = total_berat_kg * harga_per_kg
+    potongan = harga_awal * (persen_diskon / 100)
+    harga_akhir = harga_awal - potongan
+    return harga_akhir
+    
 if __name__ == "__main__":
     main()
